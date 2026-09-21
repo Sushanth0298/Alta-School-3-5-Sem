@@ -1,0 +1,184 @@
+1. What Is the Java Collections Framework?
+
+    The Java Collections Framework (JCF) is a unified architecture provided by Java to store, retrieve, manipulate, and process groups of objects.
+
+    Instead of manually managing arrays, Java provides ready-made data structures such as:
+
+        ArrayList
+        LinkedList
+        HashSet
+        TreeSet
+        HashMap
+        TreeMap
+        PriorityQueue
+        Deque
+
+    Without Collections:
+
+        String[] names = new String[3];
+
+        names[0] = "Alice";
+        names[1] = "Bob";
+        names[2] = "Charlie";
+
+    Problems:
+
+        Fixed size
+        Difficult insertion/deletion
+        No built-in searching or sorting flexibility
+
+    Using Collections:
+
+        ArrayList<String> names = new ArrayList<>();
+
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+
+        System.out.println(names);
+
+        Output:
+
+        [Alice, Bob, Charlie]
+
+    Q: Why do we need Collections when arrays already exist?
+
+        Arrays are useful when:
+            Size is fixed
+            Performance and direct indexing are important
+            We know the number of elements
+
+    Collections are useful when:
+
+        Size changes dynamically
+        We need insertion/deletion/search utilities
+        We need uniqueness, key-value storage, sorting, queues, etc.
+
+2. Collection vs Collections vs Collection Framework
+
+    Collection
+
+        Collection is an interface.
+
+        public interface Collection<E>
+
+        It represents a group of objects.
+
+        Examples of interfaces:
+
+        List
+        Set
+        Queue
+
+    Collections
+
+        Collections is a utility class.
+
+        java.util.Collections
+
+        It contains static methods for operating on collections.
+
+            Collections.sort(list);
+            Collections.reverse(list);
+            Collections.shuffle(list);
+            Collections.max(list);
+            Collections.min(list);
+
+    Example:
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        numbers.add(30);
+        numbers.add(10);
+        numbers.add(20);
+
+        Collections.sort(numbers);
+
+        System.out.println(numbers);
+
+        Output:
+
+        [10, 20, 30]
+        Collections Framework
+
+    This refers to the entire architecture:
+
+        Interfaces
+        Implementations
+        Algorithms
+        Utility methods
+        Iterators
+        Important distinction
+        Term	Meaning
+        Collection	Interface
+        Collections	Utility class
+        Collection Framework	Complete architecture
+        Student doubt
+
+    Q: Is Collections a parent class of ArrayList = No.
+
+        Collections → Utility class
+        ArrayList → Implementation class
+
+        They are unrelated through inheritance.
+
+
+    Iterable
+       |
+    Collection
+       |
+       |---------------- List
+       |                  |
+       |                  |--- ArrayList
+       |                  |--- LinkedList
+       |                  |--- Vector
+       |                  |--- Stack
+       |
+       |---------------- Set
+       |                  |
+       |                  |--- HashSet
+       |                  |--- LinkedHashSet
+       |                  |--- SortedSet
+       |                         |
+       |                         |--- NavigableSet
+       |                                |
+       |                                |--- TreeSet
+       |
+       |---------------- Queue
+                          |
+                          |--- PriorityQueue
+                          |
+                          |--- Deque
+                               |
+                               |--- ArrayDeque
+                               |--- LinkedList
+
+    Map is separate
+    
+    Map
+     |
+     |--- HashMap
+     |--- LinkedHashMap
+     |--- SortedMap
+          |
+          |--- NavigableMap
+                 |
+                 |--- TreeMap
+     |
+     |--- Hashtable
+
+    Map does not extend Collection.
+
+
+    Q: Why is Map not part of Collection?
+
+    Because a Collection stores individual elements:
+
+    [A, B, C]
+
+    A Map stores key-value pairs:
+
+    101 → "Alice"
+    102 → "Bob"
+
+    The data model is fundamentally different.

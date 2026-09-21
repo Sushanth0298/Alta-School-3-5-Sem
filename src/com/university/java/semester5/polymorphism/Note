@@ -1,0 +1,258 @@
+                 POLYMORPHISM
+                      │
+        ┌─────────────┴─────────────┐
+        │                           │
+Compile-Time                    Runtime
+(Method Overloading)       (Method Overriding)
+        │                           │
+        │                           │
+MethodOverloadingDemo         AndroidOS
+        │                      /    |     \
+        │                     /     |      \
+CompileTimeDemo       SamsungOS OnePlusOS  MIOS
+                                    │
+                    MethodOverridingDemo
+                                    │
+                         RuntimePolymorphismDemo
+                                    │
+                                 Main
+
+
+
+polymorphism
+│
+├── MethodOverloadingDemo.java
+│
+├── CompileTimePolymorphismDemo.java
+│
+├── AndroidOS.java
+│
+├── SamsungOS.java
+│
+├── OnePlusOS.java
+│
+├── MIOS.java
+│
+├── MethodOverridingDemo.java
+│
+├── RuntimePolymorphismDemo.java
+│
+└── Main.java
+
+
+
+
+
+
+CHAPTER: POLYMORPHISM
+1. Introduction
+    What is Polymorphism?
+
+        The word Polymorphism is derived from two Greek words.
+
+        Poly  → Many
+
+        Morph → Forms
+
+        Hence,Polymorphism means "One name, many forms."
+
+        In Java, the same method name can perform different tasks depending on the situation.
+
+    Definition
+
+        Polymorphism is an Object-Oriented Programming (OOP) concept in which a single interface, method, or object can take many forms or exhibit different behaviors.
+
+        Real-Life Examples
+        Example 1: Person
+        Teacher → teaches
+
+        Doctor → treats patients
+
+        Engineer → develops software
+
+    All are persons but perform different work.
+
+    Example 2: Animal
+
+            Animal makes sound
+
+            Dog  → Bark
+
+            Cat  → Meow
+
+            Cow  → Moo
+
+            Same action
+
+            sound()
+
+    Different implementation.
+
+    Example 3: Mobile Operating System
+
+                AndroidOS
+
+                ↓
+
+                SamsungOS
+
+                ↓
+
+                OnePlusOS
+
+                ↓
+
+                MIOS
+
+    Each mobile shows a different home screen.
+
+    Why Polymorphism?
+
+        Without polymorphism
+
+        displayStudent()
+
+        displayEmployee()
+
+        displayTeacher()
+
+        Too many methods.
+
+        With polymorphism
+
+    display()
+
+    Same method name.
+
+    Different behavior.
+
+    This makes programs
+
+    Cleaner
+    Easier to understand
+    Easier to maintain
+    More reusable
+
+
+Types of Polymorphism
+                     Polymorphism
+                          |
+            ------------------------------
+            |                            |
+     Compile Time                  Runtime
+    (Method Overloading)      (Method Overriding)
+
+
+Method
+
+Definition
+
+    A method is a block of code that performs a specific task.
+
+Example
+
+    void display()
+    {
+        System.out.println("Hello");
+    }
+
+Components
+
+    Return Type
+
+    Method Name
+
+    Parameters
+
+    Method Body
+
+    METHOD OVERLOADING
+
+    Definition
+
+        Method Overloading means having multiple methods with the same name inside the same class but with different parameter lists.
+
+Why do we use it?
+
+    Suppose we have a Calculator.
+
+Addition can be
+
+    10 + 20
+
+    10 + 20 + 30
+
+    5.5 + 8.5
+
+Instead of writing
+
+    addTwoNumbers()
+
+    addThreeNumbers()
+
+    addDoubleNumbers()
+
+    We simply write
+
+    add()
+
+Java decides which method to call.
+
+    Rules of Method Overloading
+
+        Methods must have
+
+        ✓ Same name
+
+        Different
+
+        ✓ Number of parameters
+
+        OR
+
+        ✓ Type of parameters
+
+        OR
+
+        ✓ Order of parameters
+
+        Return type alone cannot overload methods.
+
+Examples:
+
+    Valid
+        display()
+
+        display(int age)
+
+        display(String name)
+
+        display(int age, String name)
+
+
+    Invalid
+        int display()
+
+        double display()
+
+        Only return type changed.
+
+
+    Compiler Error.
+
+    Compile-Time Polymorphism, Also called Static Binding, Early Binding
+
+    Method Overloading
+
+    Compiler decides
+
+    Which method should execute
+
+    During compilation.
+
+Example Class Structure
+
+CompileTimePolymorphismDemo
+                |
+                |
+      MethodOverloadingDemo

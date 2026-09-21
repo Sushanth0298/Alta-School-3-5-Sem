@@ -1,0 +1,102 @@
+Inheritance :
+
+    Inheritance is one of the four pillars of Object-Oriented Programming.
+
+    It allows one class to acquire the properties (variables) and behaviors (methods) of another class.
+
+    Instead of writing the same code again and again, Java allows us to reuse existing classes.
+
+    Inheritance represents an IS-A Relationship.
+
+    Dog IS-A Animal
+
+    Car IS-A Vehicle
+
+
+Imagine every animal has
+
+    name
+    age
+    eat()
+    sleep()
+
+Instead of writing these members in every class
+
+    Dog
+
+    Cat
+
+    Lion
+
+    Tiger
+
+We write them only once.
+
+    Animal
+
+    All other classes inherit them.
+
+    This reduces duplication.
+
+Why do we need Inheritance?
+
+Without Inheritance
+
+Dog
+
+    name
+    age
+    eat()
+
+Cat
+
+    name
+    age
+    eat()
+
+Lion
+
+    name
+    age
+    eat()
+
+Everything is repeated.
+
+
+With Inheritance
+
+    Animal
+
+    name
+    age
+    eat()
+
+    ↓
+
+    Dog
+
+    ↓
+
+    Cat
+
+    ↓
+
+    Lion
+
+Only write common code once.
+
+Advantages
+
+    Code Reusability
+    Easy Maintenance
+    Less Code
+    Better Readability
+    Supports Runtime Polymorphism
+
+
+Syntax
+    class Child extends Parent{
+
+    }
+
+    Child class inherits Variables, Methods from Parent.

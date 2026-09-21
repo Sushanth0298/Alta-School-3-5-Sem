@@ -1,0 +1,25 @@
+Hierarchical Inheritance
+
+Definition
+
+    Hierarchical inheritance is a type of inheritance in which multiple child classes inherit from a single parent class.
+
+    One superclass is shared by many subclasses.
+
+          Vehicle
+         /   |   \
+      Car  Bike Truck
+
+    Every child inherits the common properties of Vehicle.
+
+
+    A Vehicle has common properties like:
+
+        start()
+        stop()
+
+    Different vehicles have their own behaviors.
+
+        Car → drive()
+        Bike → ride()
+        Truck → loadGoods()

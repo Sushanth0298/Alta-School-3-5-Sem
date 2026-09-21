@@ -1,0 +1,77 @@
+2. Multiple Inheritance
+
+Definition
+
+    Multiple inheritance means, One child class inherits from more than one parent class.
+
+        Teacher      Employee
+              \      /
+               \    /
+               CollegeStaff
+
+Does Java Support It?
+    No.
+
+    Java does NOT support Multiple Inheritance using classes.
+
+    Java supports it only through Interfaces.
+
+Why?
+
+    Because of the Diamond Problem.
+
+Suppose
+
+            Person
+           /      \
+     Teacher      Employee
+           \      /
+          CollegeStaff
+
+    Both Teacher and Employee have
+
+    display();
+
+    Now,
+
+    CollegeStaff.display();
+
+    Which display() should execute?
+
+    Teacher's?
+
+    or
+
+    Employee's?
+
+    Java cannot decide.
+
+    This creates ambiguity.
+
+    Hence Java avoids it.
+
+    Diamond Problem
+                 Person
+                display()
+
+                /      \
+               /        \
+
+     Teacher             Employee
+     display()           display()
+
+               \        /
+
+                \      /
+
+             CollegeStaff
+
+    Ambiguous call
+
+    staff.display();
+
+    Which method?
+
+        Teacher?
+
+        Employee?

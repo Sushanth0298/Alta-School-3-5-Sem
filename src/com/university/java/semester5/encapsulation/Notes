@@ -1,0 +1,45 @@
+What is Encapsulation?
+    Encapsulation is the process of wrapping data and methods into a single unit while
+    restricting direct access to the data.
+
+    Instead of  << Person, Name, Age, Salary >> being public, we hide them.
+
+    private String name;
+
+    private int age;
+
+    private double salary;
+
+
+Access Only through methods.
+
+    getName()
+
+    setName()
+
+
+Real Life Example
+
+    ATM
+
+    Can you directly access/update ? Balance = ₹50,000
+
+    You must use
+
+        Deposit()
+
+        Withdraw()
+
+        CheckBalance()
+
+Advantages
+
+    Data Hiding
+
+    Validation
+
+    Security
+
+    Maintainability
+
+    Controlled Access

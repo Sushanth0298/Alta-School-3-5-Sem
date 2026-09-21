@@ -1,0 +1,82 @@
+Since Java 9, interfaces can have private methods. These methods are mainly used as helper methods for other methods inside the interface.
+
+You cannot call them directly from outside the interface or from an implementing class.
+
+Example :
+    interface Vehicle {
+
+        default void start() {
+            checkEngine();
+            System.out.println("Vehicle started");
+        }
+
+        default void stop() {
+            checkEngine();
+            System.out.println("Vehicle stopped");
+        }
+
+        private void checkEngine() {
+            System.out.println("Checking engine...");
+        }
+    }
+
+Here, both start() and stop() use the same private helper method. Calling it
+
+    class Car implements Vehicle {
+
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Car c = new Car();
+
+            c.start();
+            c.stop();
+        }
+    }
+
+Output:
+    Checking engine...
+    Vehicle started
+    Checking engine...
+    Vehicle stopped
+    Can we do this?
+    c.checkEngine(); // ERROR
+
+
+Because checkEngine() is private to the interface.
+
+Why are private methods useful?
+
+Suppose multiple default methods need the same logic:
+
+interface Payment {
+
+    default void pay() {
+        validate();
+        System.out.println("Payment successful");
+    }
+
+    default void refund() {
+        validate();
+        System.out.println("Refund successful");
+    }
+
+    private void validate() {
+        System.out.println("Validating payment...");
+    }
+}
+
+Instead of duplicating validation code in every default method, we keep it in one private helper.
+
+Important point
+
+Private interface methods:
+
+Introduced in Java 9
+Must have a body
+Cannot be accessed by implementing classes
+Cannot be overridden
+Can be called only from methods inside the same interface
+
+Think of them as internal helper methods used by default or static methods of the interface.

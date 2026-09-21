@@ -1,0 +1,80 @@
+Interface variables are public static final by default
+    interface Vehicle {
+        int wheels = 4;
+    }
+
+Compiler treats it as:
+
+    interface Vehicle {
+        public static final int wheels = 4;
+    }
+
+
+
+The constant belongs to the contract and can be accessed publicly.
+
+System.out.println(Vehicle.wheels);
+
+The variable belongs to the interface itself, not to individual implementing objects.
+
+Vehicle.wheels
+
+Interface variables represent constants, not changeable instance data.
+
+Vehicle.wheels = 6; // Error
+
+Because final means it cannot be reassigned.
+
+An interface traditionally contains:
+
+interface Example {
+
+    // Method → public abstract
+    void display();
+
+    // Variable → public static final
+    int VALUE = 10;
+}
+
+Interface = Contract + Constants
+
+Methods → What implementing classes must do
+Variables → Constants shared by everyone
+
+Important modern Java exception
+
+Since Java 8, interfaces can also contain:
+
+    default void show() {
+        System.out.println("Default implementation");
+    }
+
+and
+
+    static void test() {
+        System.out.println("Static method");
+    }
+
+Since Java 9, they can also contain private methods.
+
+So the more accurate statement is:
+
+    Interface methods without a body are implicitly public abstract, and interface fields are implicitly public static final.
+
+
+In a normal class :
+
+    class Animal {
+        void eat() {
+        }
+    }
+
+Here, no access modifier means default (package-private).
+
+In an interface :
+
+    interface Animal {
+        void eat();
+    }
+
+Java language rules say that a method declared in an interface without a body is implicitly: public abstract void eat();

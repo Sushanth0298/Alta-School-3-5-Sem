@@ -1,0 +1,263 @@
+Relationships Between Classes (OOP)
+
+In Java, classes rarely exist alone. They work together by creating relationships.
+
+There are mainly 5 relationships you should know:
+
+    IS-A (Inheritance)
+    HAS-A (Association)
+    Aggregation
+    Composition
+    Dependency (USES-A)
+
+---------------------------------------------------------------------------------------------------
+
+1. IS-A Relationship (Inheritance)
+    Definition
+
+    One class becomes another class.
+
+    Dog IS-A Animal
+    Car IS-A Vehicle
+    SavingsAccount IS-A BankAccount
+
+---------------------------------------------------------------------------------------------------
+
+2. HAS-A Relationship (Association)
+
+    A class contains another class as one of its members.
+
+    Customer HAS-A Account
+
+    Student HAS-A Laptop
+
+    Employee HAS-A Address
+
+    Customer
+    -----------
+    name
+    age
+    Account account
+
+    HAS-A
+
+    Account
+    ---------
+    accNo
+    balance
+
+    This is called Association. The two classes know each other.
+
+    Real World Example
+
+    Customer
+
+    Name
+    Email
+    Phone
+
+    ↓
+
+    creates
+
+    ↓
+
+    Account
+
+    Account Number
+    Balance
+    IFSC
+
+    Customer object stores an Account object.
+
+---------------------------------------------------------------------------------------------------
+
+
+Flow
+
+    Login Screen
+
+    ↓
+
+    Validate Customer
+
+    ↓
+
+    Create Customer Object
+
+    ↓
+
+    Create Account Object
+
+    ↓
+
+    Link Customer with Account
+
+    ↓
+
+    Store both inside Database
+
+Customer
+
+    Customer customer = new Customer(...);
+
+Account
+
+    Account account = new Account(...);
+
+Link
+
+    customer.setAccount(account);
+
+Now
+
+    Customer HAS-A Account
+
+
+There are two types.
+HAS-A
+
+    Aggregation
+    Composition
+
+
+
+---------------------------------------------------------------------------------------------------
+
+3. Aggregation
+
+    Definition
+
+        A weak HAS-A relationship.
+
+        The child object can exist independently.
+
+        Example
+
+            College HAS-A Students
+
+            Department HAS-A Teachers
+
+            Library HAS-A Books
+
+        If
+
+            College is deleted
+
+            Students still exist.
+
+            They can join another college.
+
+        Example
+
+            class Student{
+
+            }
+
+            class College{
+
+                Student student;
+
+            }
+
+        Student can exist without College.Hence Aggregation.
+
+
+        Characteristics
+
+            Weak Relationship
+
+            Independent Life Cycle
+
+            Object Sharing Possible
+
+        Example
+            Person
+            ↓
+
+            owns
+
+            ↓
+
+            Car
+
+            Even if
+
+            Person object disappears,
+
+            Car still exists.
+---------------------------------------------------------------------------------------------------
+4. Composition
+
+    A strong HAS-A relationship.
+
+    Child object cannot exist without Parent.
+
+    Example
+
+        House HAS-A Room
+
+        Car HAS-A Engine
+
+        Human HAS-A Heart
+
+        Destroy Car
+
+        ↓
+
+        Engine is also destroyed.
+
+    Example
+
+        class Engine{
+
+        }
+
+        class Car{
+
+            private Engine engine =
+                    new Engine();
+
+        }
+
+    Diagram
+
+
+
+    Characteristics
+
+        Strong Relationship
+
+        Same Life Cycle
+
+        Cannot exist separately
+
+    Example
+        Book contains Pages
+
+            Delete Book
+
+                 ↓
+
+        Pages don't exist independently.
+
+
+---------------------------------------------------------------------------------------------------
+
+Relationships
+
+                Classes
+                    |
+        ------------------------
+        |                      |
+      IS-A                  HAS-A
+(Inheritance)            (Association)
+                              |
+                 -------------------------
+                 |                       |
+          Aggregation             Composition
+           (Weak)                 (Strong)
+
+                    |
+              Dependency
+                (Uses-A)

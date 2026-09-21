@@ -1,0 +1,28 @@
+abstraction
+    │
+    ├── Shape.java
+    ├── Circle.java
+    ├── Rectangle.java
+    ├── Main.java
+    │
+    ├── Demo.java
+    ├── Sample.java
+    ├── DemoMain.java
+    │
+    ├── User.java
+    ├── Customer.java
+    ├── Employee.java
+    ├── UserMain.java
+
+
+
+| Feature               | Abstraction                                                                       | Abstract Class                                                                          | Encapsulation                                                                                           |
+| --------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Definition**        | The process of hiding implementation details and showing only essential features. | A special class declared using the `abstract` keyword that helps implement abstraction. | The process of wrapping data and methods into a single unit and protecting data using access modifiers. |
+| **Purpose**           | To hide complexity.                                                               | To provide partial implementation and force subclasses to implement required methods.   | To secure data and control access to it.                                                                |
+| **Keyword**           | No keyword (it's a concept).                                                      | `abstract`                                                                              | No keyword (uses `private`, `protected`, `public`).                                                     |
+| **Focus**             | What an object does.                                                              | Provides a blueprint for subclasses.                                                    | How data is protected.                                                                                  |
+| **Object Creation**   | Not applicable.                                                                   | Cannot create an object directly.                                                       | Objects can be created normally.                                                                        |
+| **Methods**           | Achieved using abstract classes or interfaces.                                    | Can contain abstract methods and concrete methods.                                      | Usually contains getters and setters to access private data.                                            |
+| **Real-life Example** | You drive a car using the steering wheel without knowing how the engine works.    | A "Shape" class defines `draw()`, while `Circle` and `Rectangle` implement it.          | An ATM hides the bank balance and allows access only through deposit/withdraw operations.               |
+

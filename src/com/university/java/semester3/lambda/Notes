@@ -1,0 +1,13 @@
+src
+└── lambda
+    ├── Calculator.java
+    │   └── Functional interface for arithmetic operations
+    │
+    ├── Greeting.java
+    │   └── Functional interface for greeting
+    │
+    ├── SortingDemo.java
+    │   └── Lambda expression used for sorting
+    │
+    └── Main.java
+        └── Program execution

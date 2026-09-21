@@ -1,0 +1,108 @@
+What is a Constructor?
+
+    A constructor is a special member of a class that is automatically
+    executed whenever an object is created.
+
+    Its primary purpose is to initialize the object's data members.
+
+    Example
+
+        Student s = new Student();
+
+    As soon as the above statement executes,
+
+        Memory is allocated.
+        Constructor executes.
+        Object gets initialized.
+        Reference is returned.
+
+Why do we need Constructors?
+
+    Student s = new Student();
+
+    s.name = "Rahul";
+    s.age = 20;
+
+    Easy way to initialize-> Student s = new Student("Rahul",20);
+
+
+
+    Everything is initialized immediately.
+
+Advantages
+
+    Initializes object
+    Reduces code
+    Prevents partially initialized objects
+    Makes object creation easier
+
+
+Rules of Constructor
+
+    Constructor name must be same as class name.
+    Constructor has no return type.
+    Constructor executes automatically.
+    Can be overloaded.
+    Cannot be inherited.
+    Can call another constructor using this().
+    Parent constructor can be called using super().
+
+Types of Constructors
+
+    1. Default Constructor
+
+        A constructor having no parameters.
+
+            Example :
+
+                Student(){
+
+                }
+
+    2. Parameterized Constructor
+
+        Accepts parameters while creating object.
+
+            Example :
+
+                Student(String name,int age){
+
+                }
+
+    3. Constructor Overloading
+
+        Multiple constructors with different parameter lists.
+
+            Example :
+
+                Student()
+
+                Student(String name)
+
+                Student(String name,int age)
+
+        Java decides which constructor to call based on arguments.
+
+
+
+What is the difference between a constructor and a method?
+
+        Constructor	                                        Method
+    Same name as class	                                Any valid name
+    No return type	                                    Has a return type (void or another type)
+    Executes automatically during object creation	    Called explicitly
+    Initializes object state	                        Performs operations
+    Cannot be inherited or overridden	                Can be inherited and overridden (where applicable)
+
+
+What is constructor chaining?
+    Calling one constructor from another using this() (same class) or super() (parent class).
+
+Can constructors be static?
+    No. Constructors belong to objects, while static belongs to the class.
+
+Can constructors be overridden?
+    No. Constructors are not inherited, so they cannot be overridden.
+
+Why doesn't a constructor have a return type?
+    Because Java treats it as a special initialization method. If you add a return type (even void), it becomes a normal method.

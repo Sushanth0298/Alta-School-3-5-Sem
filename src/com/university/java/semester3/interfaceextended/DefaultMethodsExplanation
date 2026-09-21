@@ -1,0 +1,208 @@
+1. Before Java 8: Interfaces could only declare abstract methods
+
+    Suppose Java had this interface:
+
+        interface Payment {
+            void pay();
+        }
+
+    Many developers create their own classes implementing it:
+
+        class CreditCard implements Payment {
+            public void pay() {
+                System.out.println("Paid using credit card");
+            }
+        }
+
+        class UPI implements Payment {
+            public void pay() {
+                System.out.println("Paid using UPI");
+            }
+    }
+
+Everything works.
+
+2. Now imagine Java adds a new method
+
+    Suppose Java designers decide:
+
+    Every payment method should also support refunds.
+
+    They change the interface:
+
+        interface Payment {
+            void pay();
+            void refund();  // NEW METHOD
+        }
+
+    What happens?
+
+    Your existing classes:
+
+        class CreditCard implements Payment {
+            public void pay() {
+                System.out.println("Paid using credit card");
+            }
+        }
+
+    Now produce an error:
+
+    CreditCard is not abstract and does not override abstract method refund()
+
+    Why?
+
+    Because CreditCard promised:
+
+    I implement the Payment interface.
+
+    But now Payment has two required methods, and CreditCard only implements one.
+
+    Every existing implementation must be modified:
+
+        class CreditCard implements Payment {
+            public void pay() {
+                System.out.println("Paid using credit card");
+            }
+
+            public void refund() {
+                System.out.println("Refund processed");
+            }
+        }
+
+    Imagine thousands of classes across the world implementing a popular interface. Adding one method becomes dangerous.
+
+3. Java 8 solution: Default method
+
+    Instead of adding an abstract method: void refund();
+
+    Java allows:
+
+        default void refund() {
+            System.out.println("Default refund process");
+        }
+
+    Complete interface:
+
+        interface Payment {
+            void pay();
+
+            default void refund() {
+                System.out.println("Default refund process");
+            }
+        }
+
+    Now old classes do not break:
+
+        class CreditCard implements Payment {
+            public void pay() {
+                System.out.println("Paid using credit card");
+            }
+        }
+
+    This is valid because refund() already has an implementation in the interface.
+
+    CreditCard c = new CreditCard();
+    c.pay();
+    c.refund();
+
+    Output:
+
+    Paid using credit card
+    Default refund process
+
+4. A class can override the default method if needed
+
+        class UPI implements Payment {
+            public void pay() {
+                System.out.println("Paid using UPI");
+            }
+
+            @Override
+            public void refund() {
+                System.out.println("UPI-specific refund");
+            }
+        }
+
+    Now:
+
+    Payment p = new UPI();
+    p.refund();
+
+    Output:
+
+    UPI-specific refund
+
+    So:
+
+    Default method = optional override, because the interface already provides an implementation.
+
+5. Relating this to forEach()
+
+Before Java 8, imagine:
+
+    interface Collection {
+        int size();
+        boolean add(Object obj);
+        // etc.
+    }
+
+    Thousands of classes implement Collection:
+
+    ArrayList
+    LinkedList
+    HashSet
+    Custom collection classes written by developers
+
+    Java wanted to introduce: void forEach(...)
+
+    If they added it as abstract: void forEach(...);
+
+    then every existing collection implementation would need to implement it.
+
+    Instead, Java 8 added a default implementation conceptually like:
+
+    default void forEach(Consumer action) {
+        for (Object obj : this) {
+            action.accept(obj);
+        }
+    }
+
+    Therefore:
+
+    ArrayList
+    LinkedList
+    HashSet
+
+    could automatically use the new method without changing their source code.
+
+    Example:
+
+    List<Integer> numbers = new ArrayList<>();
+
+    numbers.add(10);
+    numbers.add(20);
+    numbers.add(30);
+
+    numbers.forEach(n -> System.out.println(n));
+
+    ArrayList does not necessarily need to individually implement forEach() just because the interface gained it. It can inherit the default implementation.
+
+    The key difference
+
+    Abstract method:
+
+    Every implementing class MUST provide its own implementation.
+
+    Default method:
+
+    The interface provides an implementation. Implementing classes MAY override it.
+
+    interface A {
+        void test();  // Must override
+
+        default void show() {  // Already implemented
+            System.out.println("Hello");
+        }
+    }
+
+    Default methods were introduced in Java 8 to allow interfaces to evolve by adding new methods with implementations, without forcing all existing implementing classes to override those methods.

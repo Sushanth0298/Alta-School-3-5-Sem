@@ -1,0 +1,51 @@
+Hybrid Inheritance
+
+    Definition :
+        Hybrid inheritance is a combination of two or more inheritance types.
+
+    Example
+        Single AND Hierarchical = Hybrid
+
+    Diagram
+                     Animal
+                    /      \
+                 Dog       Cat
+                   |
+                 Puppy
+
+    This contains
+        Hierarchical and Single Hence, Hybrid.
+
+
+
+    Another Example
+
+                     Employee
+                    /       \
+              Developer    Tester
+                    |
+             SeniorDeveloper
+
+    Contains
+        Hierarchical, Multilevel Hence,Hybrid.
+
+
+Q1. What is Hierarchical Inheritance?
+
+    One parent class is inherited by multiple child classes.
+
+Q2. Does Java support Multiple Inheritance?
+
+    No, not through classes. It supports it through interfaces.
+
+Q3. What is the Diamond Problem?
+
+    It is the ambiguity that occurs when a child inherits the same method from two parent classes.
+
+Q4. What is Hybrid Inheritance?
+
+    A combination of two or more inheritance types (for example, hierarchical + multilevel).
+
+Q5. Does Java support Hybrid Inheritance?
+
+    Not using classes. Hybrid inheritance is achieved in Java through interfaces.

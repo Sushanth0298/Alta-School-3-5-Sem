@@ -1,0 +1,304 @@
+What happens after writing a C program?
+
+        Compile
+
+        ↓
+
+        Executable (.exe)
+
+        ↓
+
+        Run
+
+IN JAVA
+
+        Java Source Code (.java)
+
+        ↓
+
+        Compiler (javac)
+
+        ↓
+
+        Bytecode (.class)
+
+        ↓
+
+        JVM
+
+        ↓
+
+        Machine Code
+
+        ↓
+
+        Output
+
+PPT - REFERENCE
+
+    JDK
+    JRE
+    JVM
+
+
+Variables : Definition
+
+            A variable is a named memory location used to store data.
+                                OR
+            A variable is a named memory location used to store data temporarily during program execution.
+                                OR
+            A variable is a container that stores data which can change during program execution.
+
+            SYNTAX :
+
+                datatype variableName = value;
+
+                   example :
+
+                            int age = 20;
+
+                            double salary = 45000;
+
+                            char grade = 'A';
+
+                            boolean passed = true;
+
+                            String name = "Rahul";
+                   Rules
+
+                            Cannot start with number
+
+                            Cannot contain spaces
+
+                            Case Sensitive
+
+                            Meaningful Names
+
+
+                    int age = 20;
+
+                    Memory
+
+                    +---------+
+                    |   20    |
+                    +---------+
+                         ↑
+                        age
+
+
+Why Do We Need Variables?
+
+    System.out.println(20);
+    System.out.println(20);
+
+    Instead,
+        int age = 20;
+
+        System.out.println(age);
+        System.out.println(age);
+
+    Variables improve
+
+        Readability
+        Maintainability
+        Reusability
+
+    General Syntax
+        datatype variableName = value;
+
+        int age = 20;
+
+        int      → datatype
+
+        age      → variable name
+
+        =        → assignment operator
+
+        20       → value
+
+
+    Variables are called variables because their values can change.
+
+
+Declaration vs Initialization
+
+    Declaration
+
+        Creating the variable.
+
+        int age;
+
+        Memory is allocated.
+
+        No value is assigned yet.
+
+    Initialization
+
+        Giving value.
+
+        age = 20;
+
+Variable Naming Rules
+
+        Valid
+
+            studentName
+
+            age
+
+            salary
+
+            number1
+
+            _marks
+
+        Invalid
+
+            1age
+
+            student-name
+
+            student name
+
+            class
+
+Data Types : Primitive
+                     byte
+
+                     short
+
+                     int
+
+                     long
+
+                     float
+
+                     double
+
+                     char
+
+                     boolean
+
+              Reference
+                    String
+
+                    Arrays
+
+                    Classes
+
+                    Objects
+
+
+
+
+| Primitive | Wrapper   | Size          |
+| --------- | --------- | ------------- |
+| byte      | Byte      | 1             |
+| short     | Short     | 2             |
+| int       | Integer   | 4             |
+| long      | Long      | 8             |
+| float     | Float     | 4             |
+| double    | Double    | 8             |
+| char      | Character | 2             |
+| boolean   | Boolean   | JVM dependent |
+
+
+
+
+Types of Variables
+
+Java has three major types.
+
+1. Local Variable
+
+        Declared inside a method.
+
+        Example
+
+            public static void main(String[] args){
+
+                int age = 20;
+
+            }
+
+        Properties
+
+            Created when method starts
+            Destroyed when method ends
+            No default value
+            Accessible only inside the method
+
+2. Instance Variable
+
+        Declared inside class.
+
+            Outside methods.
+
+            class Student{
+
+                int age;
+
+            }
+
+        Properties
+
+            Belongs to an object
+            Every object gets its own copy
+
+3. Static Variable
+
+        Declared using
+
+            static
+
+            Example
+
+            class Student{
+
+                static String college = "ADYPU";
+
+            }
+
+        Properties
+
+            Shared by all objects
+            Only one copy exists
+            Variable Scope
+
+Scope ?
+
+Where can we use the variable?
+
+Example
+
+public class Demo{
+
+    public static void main(String[] args){
+
+        int age = 20;
+
+        System.out.println(age);
+
+    }
+
+}
+
+
+    Variable	Lifetime
+
+    Local	    Until method ends
+    Instance	Until object is destroyed
+    Static	    Until program ends
+
+
+Default Values
+    Only Instance variables, Static variables, receive default values.
+
+    Type	    Default
+    int	        0
+    double	    0.0
+    boolean	    false
+    char	    '\u0000'
+    String	    null
+
+Local variables must be initialized before use.

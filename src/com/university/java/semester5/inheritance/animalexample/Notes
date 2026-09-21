@@ -1,0 +1,56 @@
+
+    Inheritance is an Object-Oriented Programming (OOP) concept that allows one class to acquire the properties (variables) and behaviors (methods) of another class.
+    It promotes code reusability, extensibility, and represents an IS-A relationship.
+
+
+Constructor in Inheritance
+
+    When a child object is created
+     new Dog();
+
+    Java first executes
+
+    Animal() -> then Dog()
+
+    Reason -> Parent must initialize first.
+
+    Execution
+
+    Main()
+
+    ↓
+
+    Dog Object
+
+    ↓
+
+    Animal()
+
+    ↓
+
+    Dog()
+
+    ↓
+
+    Program Continues
+
+Constructor Chaining
+
+Definition
+
+    Automatic calling of parent constructors before child constructors.
+
+    Keyword - super();
+
+    Example :
+
+        Animal()
+
+            ↓
+
+        Dog()
+
+            ↓
+
+        Puppy()
+

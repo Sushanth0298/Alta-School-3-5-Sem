@@ -1,0 +1,63 @@
+What is a Member?
+
+    Anything declared inside a class is called a member.
+
+    Members can be:
+
+        Variables (Data Members)
+        Methods (Member Functions)
+        Constructors
+        Nested Classes
+
+
+StaticBlockDemo :
+
+    Java executed it automatically when the class was loaded into memory by the JVM
+
+            1. JVM starts
+                    ↓
+            2. Class is loaded into memory
+                    ↓
+            3. Static variables are initialized
+                    ↓
+            4. Static blocks are executed
+                    ↓
+            5. main() method is called
+                    ↓
+            6. Objects are created (if you create them)
+                    ↓
+            7. Constructors execute
+                    ↓
+            8. Non-static methods execute (when called)
+
+                    class Student {
+
+                            static {
+                                System.out.println("Student Static Block");
+                            }
+
+                            Student() {
+                                System.out.println("Constructor");
+                            }
+                   }
+
+                 public class Demo {
+
+                            static {
+                                System.out.println("Demo Static Block");
+                            }
+
+                            public static void main(String[] args) {
+
+                                Student s1 = new Student();
+                                Student s2 = new Student();
+
+                            }
+                 }
+
+
+        output :
+                Demo Static Block
+                Student Static Block
+                Constructor
+                Constructor
