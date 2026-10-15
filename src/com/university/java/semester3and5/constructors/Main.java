@@ -4,12 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-
-
-
-
-
         Student s1 = new Student("RAHUL", 18, "JAVA");
         System.out.println(s1.toString());
 

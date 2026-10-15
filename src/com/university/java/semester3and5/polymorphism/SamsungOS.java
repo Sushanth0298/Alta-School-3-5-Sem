@@ -5,6 +5,8 @@ public class SamsungOS extends AndroidOS {
     @Override
     public void showHomeScreen() {
 
+        // logic
+
         System.out.println("Samsung One UI");
 
     }

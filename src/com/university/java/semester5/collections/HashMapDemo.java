@@ -7,15 +7,22 @@ public class HashMapDemo {
 
     public static void demo() {
 
-        HashMap<Integer, String> students = new HashMap<>();
+        HashMap<Integer, Student> students = new HashMap<>();
+        students.put(101, new Student(101, "RAHUL",90));
 
-        students.put(101, "Rahul");
-        students.put(102, "Sneha");
-        students.put(103, "Amit");
+        HashMap<Integer, String> demo = new HashMap<>();
+        demo.put(102, "Sneha");
+        demo.put(103, "Amit");
 
         System.out.println("HashMap");
 
-        for (Map.Entry<Integer, String> entry : students.entrySet()) {
+
+        for(Map.Entry<Integer, String> e : demo.entrySet()){
+            System.out.println( e.getKey());
+        }
+
+
+        for (Map.Entry<Integer, Student> entry : students.entrySet()) {
 
             System.out.println(entry.getKey() + " : " + entry.getValue());
 

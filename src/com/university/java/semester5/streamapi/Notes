@@ -1,0 +1,29 @@
+
+                         Java Stream API
+                               │
+                               ▼
+                         Collection/List
+                               │
+                          .stream()
+                               │
+                               ▼
+                         Stream<T>
+                               │
+              ┌────────────────┴────────────────┐
+              │                                 │
+       Intermediate                       Terminal
+        Operations                       Operations
+              │                                 │
+       ┌──────┴──────┐             ┌───────────┼────────────┐
+       │             │             │           │            │
+    filter()       map()        toList()    count()     forEach()
+                                   │
+                            ┌──────┴──────┐
+                            │             │
+                          max()         min()
+                            │             │
+                            └──────┬──────┘
+                                   ▼
+                               Optional
+                                   │
+                         orElse / orElseThrow

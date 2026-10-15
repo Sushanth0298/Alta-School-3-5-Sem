@@ -31,16 +31,16 @@ public class Dog extends Animal{
 //    {
 //        System.out.println("Dog is eating");
 //    }
-    public void bark(){
-        System.out.println("Dog Barking");
-    }
-
-
-    public void eat(){
-        System.out.println("DOG IS EATING");
-    }
-
-
+//    public void bark(){
+//        System.out.println("Dog Barking");
+//    }
+//
+//
+//    public void eat(){
+//        System.out.println("DOG IS EATING");
+//    }
+//
+//
     public void sound(){
         System.out.println("THIS IS DOG SOUND");
     }

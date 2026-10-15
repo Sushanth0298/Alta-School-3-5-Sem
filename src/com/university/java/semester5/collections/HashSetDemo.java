@@ -11,8 +11,10 @@ public class HashSetDemo {
         cities.add("Bangalore");
         cities.add("Mysore");
         cities.add("Chennai");
-        cities.add("Hyderabad");
-        cities.add("Bangalore");
+        cities.add("Pune");
+        cities.add("Pune");
+        cities.add("Pune");
+        cities.add("Pune");
 
         System.out.println("HashSet Elements");
 

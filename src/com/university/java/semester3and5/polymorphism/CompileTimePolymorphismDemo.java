@@ -7,10 +7,14 @@ public class CompileTimePolymorphismDemo {
         MethodOverloadingDemo obj = new MethodOverloadingDemo();
 
         obj.display();
-        obj.display(21);
+        obj.display("ABC");
         obj.display("Sushanth");
         obj.display(21, "Sushanth");
         obj.display();
+
+
+
+        obj.display("String");
 
     }
 
