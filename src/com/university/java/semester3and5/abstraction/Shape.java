@@ -4,10 +4,6 @@ abstract class Shape {
 
     abstract void draw();
 
-//    public  void  test()
-//    {
-//
-//    }
    // abstract void design();
 
 }

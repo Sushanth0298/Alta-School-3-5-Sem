@@ -10,4 +10,5 @@ public interface Vehicle {
 
     void fuelType();
 
+
 }

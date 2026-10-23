@@ -15,8 +15,14 @@ public class Main {
 //        System.out.println(account.getBal());
 
 
+
+
+        Account a = new Account();
+
         Account account = new Account();
         account.setBal(10000);
+        System.out.println(account.getBal());
+
         account.setBal(1);
         System.out.println(account.getBal());
 

@@ -10,11 +10,9 @@ public class CompileTimePolymorphismDemo {
         obj.display("ABC");
         obj.display("Sushanth");
         obj.display(21, "Sushanth");
-        obj.display();
 
 
 
-        obj.display("String");
 
     }
 

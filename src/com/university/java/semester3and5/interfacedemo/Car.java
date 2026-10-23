@@ -6,7 +6,6 @@ public class Car implements Vehicle {
     public void start() {
         System.out.println("Car starts using a key or push button");
     }
-
     @Override
     public void stop() {
         System.out.println("Car stops using brakes");

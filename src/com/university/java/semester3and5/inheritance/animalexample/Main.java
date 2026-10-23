@@ -7,14 +7,17 @@ public class Main {
 //       a.eat();
 //       a.sound();
 
-       Dog d = new Dog();
-       d.sound();
-       d.eat();
+//       Dog d = new Dog();
+//       d.sound();
+       //d.eat();
        //d.bark();
 
 //       Animal a1 = new Dog();
 //        System.out.println(" ****** ");
 //       a1.eat();
+
+        Cat c = new Cat();
+        c.sound();
 
     }
 }

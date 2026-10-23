@@ -17,7 +17,7 @@ public class BankAccount {
         return balance;
     }
 
-    public BankAccount(String accountNo, String owner, double initalBalance){
+     BankAccount(String accountNo, String owner, double initalBalance){
         this.accountNo = accountNo;
         this.owner = owner;
 
