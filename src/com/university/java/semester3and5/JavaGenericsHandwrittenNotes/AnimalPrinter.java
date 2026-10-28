@@ -8,7 +8,7 @@ import java.io.Serializable;
  *
  * When there is a class bound and interface bounds, the class bound comes first.
  */
-public class AnimalPrinter<T extends Animal & Serializable> {
+public class AnimalPrinter<T extends  Animal & Serializable> {
     private final T thingToPrint;
 
     public AnimalPrinter(T thingToPrint) {

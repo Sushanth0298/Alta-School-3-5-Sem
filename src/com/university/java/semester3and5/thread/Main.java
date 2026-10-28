@@ -6,13 +6,14 @@ import java.util.logging.FileHandler;
 public class Main {
     public static void main(String[] args) throws IOException {
 
+
        // FileHandler fileHandler = new FileHandler("");
-//        Thread t = Thread.currentThread();
-//        System.out.println(t.getName());
-//        System.out.println(t.getPriority());
+        Thread t = Thread.currentThread();
+        System.out.println(t.getName());
+        System.out.println(t.getPriority());
 
 
-        //System.out.println(t.getPriority());
+        System.out.println(t.getPriority());
 
         System.out.println("Start");
         try{
